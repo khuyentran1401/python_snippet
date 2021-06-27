@@ -1,27 +1,11 @@
-import sys
-
 import questionary
 from questionary import Choice
-from rich.console import Console
 
-from .download_code import get_file_name, print_code
 from .get_contents import CategoryGetter
-from .utils import CATEGORY_TO_SUBCATEGORY, handle_exception
+from .utils import CATEGORY_TO_SUBCATEGORY, handle_exception, console, get_post_from_questionary, get_code, get_choices
+import typer 
 
-console = Console()
-
-
-def get_color(num: int):
-    if num % 2 == 0:
-        return "fg:#809bce bold"
-    return "fg:#d6eadf"
-
-
-def get_choices(titles: list):
-    return [
-        Choice(title=[(get_color(i), choice)])
-        for i, choice in enumerate(titles)
-    ]
+app = typer.Typer()
 
 
 @handle_exception
@@ -48,27 +32,6 @@ def get_subcategory_from_questionary(subcategories: list):
     ).ask()
 
 
-@handle_exception
-def get_post_from_questionary(choices: list):
-    return questionary.select(
-        "Which post do you want to choose?", choices=choices
-    ).ask()
-
-
-@handle_exception
-def get_print_code_from_questionary():
-    return questionary.select(
-        "Would you like to print the code snippet?", choices=["Yes", "No"]
-    ).ask()
-
-
-@handle_exception
-def get_save_code_from_questionary():
-    return questionary.select(
-        "Would you like to save the code snippet?", choices=["Yes", "No"]
-    ).ask()
-
-
 def get_subcategory(category: str):
     subcategories = CATEGORY_TO_SUBCATEGORY[category]
     if subcategories:
@@ -90,18 +53,13 @@ def get_post(subcategory: str):
     post = titles_to_post[title]
     console.print(f"Here is the link: [bold cyan]{post}[/bold cyan] :boom:")
     return titles_to_code[title]
+                
 
+@app.command()
+def search_category():
+    """Select post based on category"""
 
-def get_code(code_link: str):
-    if code_link == "":
-        return
-    print_code_ans = get_print_code_from_questionary()
-
-    if print_code_ans == "Yes":
-        code = print_code(code_link)
-        save_code = get_save_code_from_questionary()
-
-        if save_code == "Yes":
-            file_name = get_file_name(code_link)
-            with open(file_name, "w") as f:
-                f.write(code)
+    category = get_category_from_questionary()
+    subcategory = get_subcategory(category)
+    code_link = get_post(subcategory)
+    get_code(code_link)

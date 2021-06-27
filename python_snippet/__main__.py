@@ -1,25 +1,4 @@
-import typer
-
-from .question import (get_category_from_questionary, get_code, get_post,
-                       get_subcategory)
-
-app = typer.Typer()
-
-
-@app.command()
-def search_post():
-    """Search post based on string pattern"""
-    pass
-
-
-@app.command()
-def search_category():
-    """Select post based on category"""
-
-    category = get_category_from_questionary()
-    subcategory = get_subcategory(category)
-    code_link = get_post(subcategory)
-    get_code(code_link)
+from .question import app
 
 
 if __name__ == "__main__":

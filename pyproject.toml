@@ -10,6 +10,8 @@ rich = "^10.4.0"
 bs4 = "^0.0.1"
 questionary = "^1.9.0"
 requests = "^2.25.1"
+textdistance = "^4.2.1"
+typer = "^0.3.2"
 
 [tool.poetry.dev-dependencies]
 notebook = "^6.4.0"
