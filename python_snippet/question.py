@@ -1,9 +1,10 @@
 import questionary
+import typer
 from questionary import Choice
 
 from .get_contents import CategoryGetter
-from .utils import CATEGORY_TO_SUBCATEGORY, handle_exception, console, get_post_from_questionary, get_code, get_choices
-import typer 
+from .utils import (CATEGORY_TO_SUBCATEGORY, console, get_choices, get_code,
+                    get_post_from_questionary, handle_exception)
 
 app = typer.Typer()
 
@@ -53,7 +54,7 @@ def get_post(subcategory: str):
     post = titles_to_post[title]
     console.print(f"Here is the link: [bold cyan]{post}[/bold cyan] :boom:")
     return titles_to_code[title]
-                
+
 
 @app.command()
 def search_category():
