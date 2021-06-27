@@ -1,6 +1,8 @@
+import sys
+
 from decorator import decorator
-import sys 
 from rich.console import Console
+
 console = Console()
 
 CATEGORY_TO_SUBCATEGORY = {
@@ -20,11 +22,7 @@ CATEGORY_TO_SUBCATEGORY = {
         "Best practices",
         "Code speed",
     ],
-    "Pandas": [
-        "Change Values",
-        "Get Values",
-        "Testing"
-    ],
+    "Pandas": ["Change Values", "Get Values", "Testing"],
     "NumPy": [],
     "Data Science Tools": [
         "Testing",
@@ -36,7 +34,7 @@ CATEGORY_TO_SUBCATEGORY = {
         "Tools for best Python practices",
         "Speed up code",
         "Better Pandas",
-        "Machine learning"
+        "Machine learning",
     ],
     "Terminal": [
         "Text",
@@ -45,7 +43,7 @@ CATEGORY_TO_SUBCATEGORY = {
         "Python",
         "Prettify Terminal",
         "Sharing",
-        "Productive hacks"
+        "Productive hacks",
     ],
     "Cool tools": [
         "Better output",
@@ -53,18 +51,18 @@ CATEGORY_TO_SUBCATEGORY = {
         "Data",
         "Automation",
         "Git and GitHub",
-        "Alternative Approach"
+        "Alternative Approach",
     ],
-    "Jupyter Notebook": []
+    "Jupyter Notebook": [],
 }
 
-@decorator 
+
+@decorator
 def handle_exception(func, *args, **kwargs):
-    try: 
+    try:
         val = func(*args, **kwargs)
-        if val == None:
+        if val is None:
             sys.exit(1)
         return val
     except KeyboardInterrupt:
         console.print("Cancelled by user")
-        
