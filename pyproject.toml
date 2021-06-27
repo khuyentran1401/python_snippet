@@ -20,6 +20,7 @@ loguru = "^0.5.3"
 black = "^21.6b0"
 flake8 = "^3.9.2"
 isort = "^5.9.1"
+pre-commit = "^2.13.0"
 
 [tool.black]
 line-length = 79
