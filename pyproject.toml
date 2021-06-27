@@ -5,7 +5,7 @@ description = "Python and Data Science Snippets on the command line"
 authors = ["khuyentran1401 <khuyentran1476@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.6,<3.10,"
+python = ">=3.6.2,<3.10,"
 rich = "^10.4.0"
 bs4 = "^0.0.1"
 questionary = "^1.9.0"
@@ -14,6 +14,27 @@ requests = "^2.25.1"
 [tool.poetry.dev-dependencies]
 notebook = "^6.4.0"
 pytest = "^6.2.4"
+loguru = "^0.5.3"
+black = "^21.6b0"
+flake8 = "^3.9.2"
+isort = "^5.9.1"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

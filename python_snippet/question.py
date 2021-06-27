@@ -1,7 +1,7 @@
 import questionary
 from questionary import Choice
 from rich.console import Console
-from .get_contents import PostGetter
+from .get_contents import CategoryGetter
 from .download_code import print_code, get_file_name
 import sys
 from .utils import decorator, CATEGORY_TO_SUBCATEGORY
@@ -72,7 +72,7 @@ def get_subcategory(category: str):
 
 def get_post(subcategory: str):
         
-    titles_to_post, titles_to_code = PostGetter(subcategory).get_titles_with_links()
+    titles_to_post, titles_to_code = CategoryGetter(subcategory).get_titles_with_links_for_category()
     
     choices = get_choices(titles_to_post.keys())
     title = get_post_from_questionary(choices)
@@ -95,13 +95,7 @@ def get_code(code_link: str):
             with open(file_name, 'w') as f:
                 f.write(code)
     
-     
-def main():
-    
-    category = get_category_from_questionary()
-    subcategory = get_subcategory(category)
-    code_link = get_post(subcategory)
-    get_code(code_link)
+
     
         
 
