@@ -16,17 +16,17 @@ python --version
 
 ## Usage
 ### Search for posts based on category
-![gif](images/search_category.gif)
+![gif](https://github.com/khuyentran1401/python_snippet/tree/master/images/search_category.gif)
 You can search for posts based on category by typing:
 ```bash
 python-snippet search-category
 ```
 Once you select a post, you will receive an output like below:
-![image](images/search_category.png)
+![image](https://github.com/khuyentran1401/python_snippet/tree/master/images/search_category.png)
 ### Search for posts based on a string pattern
-![gif](images/search_posts.gif)
+![gif](https://github.com/khuyentran1401/python_snippet/tree/master/images/search_posts.gif)
 You can also search for posts using a string pattern such as `pandas`
 ```bash
 python-snippet search-posts pandas
 ```
-![image](images/search_posts_pandas.png)
+![image](https://github.com/khuyentran1401/python_snippet/tree/master/images/search_posts_pandas.png)
