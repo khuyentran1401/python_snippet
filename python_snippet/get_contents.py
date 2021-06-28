@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-
 class PostGetter:
     def __init__(self):
         url = "https://khuyentran1401.github.io/Python-data-science-code-snippet/"

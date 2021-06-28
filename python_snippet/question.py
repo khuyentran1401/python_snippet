@@ -1,10 +1,14 @@
 import questionary
+import typer
 
 from .get_contents import CategoryGetter
-from .utils import CATEGORY_TO_SUBCATEGORY, handle_exception, console, get_post_from_questionary, get_code, get_choices
-import typer 
+from .utils import (CATEGORY_TO_SUBCATEGORY, console, get_choices, get_code,
+                    get_post_from_questionary, handle_exception)
 
-app = typer.Typer(name='python_snippet', help="Command-line tool to search for Python and data science snippets at Data Science Simplified")
+app = typer.Typer(
+    name="python_snippet",
+    help="Command-line tool to search for Python and data science snippets at Data Science Simplified",
+)
 
 
 @handle_exception
@@ -47,14 +51,13 @@ def get_post(subcategory: str):
     ).get_titles_with_links_for_category()
 
     choices = get_choices(titles_to_post.keys())
-    
-        
+
     title = get_post_from_questionary(choices)
 
     post = titles_to_post[title]
     console.print(f"Here is the link: [bold cyan]{post}[/bold cyan] :boom:")
     return titles_to_code[title]
-                
+
 
 @app.command()
 def search_category():

@@ -1,7 +1,6 @@
 import pytest
 
-from python_snippet import is_relevant_title, get_titles_based_on_pattern
-
+from python_snippet import get_titles_based_on_pattern, is_relevant_title
 
 tests = [
     (("number", "Get Multiples of a Number Using Modulus"), True),
