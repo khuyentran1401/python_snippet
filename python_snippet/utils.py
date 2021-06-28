@@ -97,7 +97,7 @@ def get_code(code_link: str):
     if file_name.endswith('.ipynb'):
         console.print("This is a notebook so the source code will not be printed on the terminal.")
     else:
-        code = print_code(code_link)
+        code = print_code(code_link, file_name)
     
     save_code = get_save_code_from_questionary()
 

@@ -17,12 +17,17 @@ def get_raw_url(url: str):
 def get_file_name(url: str):
     return url.split("/")[-1]
 
-
-def print_code(url: str):
+def get_extension(filename: str):
+    if filename.endswith('.sh'):
+        return 'bash'
+    else:
+        return "python"
+    
+def print_code(url: str, filename: str):
     raw_url = get_raw_url(url)
     code = requests.get(raw_url).text
 
     console.print("Here is the code for you to copy: :books: \n")
-    console.print(Syntax(code, "python"))
+    console.print(Syntax(code, get_extension(filename)))
     console.print('\n')
     return code
