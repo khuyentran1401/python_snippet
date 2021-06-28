@@ -65,7 +65,7 @@ class CategoryGetter(PostGetter):
 
     def get_category(self):
         category = self.category_to_id()
-        if category == "numpy" or category =='jupyter-notebook':
+        if category == "numpy" or category == "jupyter-notebook":
             return self.soup.find("h1", id=category)
         return self.soup.find("h3", id=category)
 
