@@ -30,3 +30,9 @@ You can also search for posts using a string pattern such as `pandas`
 python-snippet search-posts pandas
 ```
 ![image](https://github.com/khuyentran1401/python_snippet/blob/master/images/search_posts_pandas.png?raw=true)
+
+To view all commands python-snippet provides, type:
+```bash
+python-snippet --help
+```
+![image](https://github.com/khuyentran1401/python_snippet/blob/master/images/help.png?raw=true)

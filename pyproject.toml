@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-snippet"
-version = "0.1.5.5"
+version = "0.1.5.6"
 description = "Python and Data Science Snippets on the command line"
 authors = ["khuyentran1401 <khuyentran1476@gmail.com>"]
 readme = "README.md"
