@@ -49,7 +49,7 @@ CATEGORY_TO_SUBCATEGORY = {
         "Sharing",
         "Productive hacks",
     ],
-    "Cool tools": [
+    "Cool Tools": [
         "Better output",
         "Tracking",
         "Data",
