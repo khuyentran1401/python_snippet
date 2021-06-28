@@ -1,8 +1,17 @@
 [tool.poetry]
 name = "python-snippet"
-version = "0.1.0"
+version = "0.1.4"
 description = "Python and Data Science Snippets on the command line"
 authors = ["khuyentran1401 <khuyentran1476@gmail.com>"]
+readme = "README.md"
+keywords = ['snippet', 'cli', 'command-line']
+license = "Apache-2.0"
+homepage = "https://github.com/khuyentran1401/python_snippet.git"
+repository = "https://github.com/khuyentran1401/python_snippet.git"
+exclude = ['python_snippet/__pycache__']
+
+[tool.poetry.scripts]
+python-snippet = "python_snippet.main:app"
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<3.10,"
@@ -12,6 +21,8 @@ questionary = "^1.9.0"
 requests = "^2.25.1"
 textdistance = "^4.2.1"
 typer = "^0.3.2"
+typer-cli = "^0.0.11"
+decorator = "^5.0.9"
 
 [tool.poetry.dev-dependencies]
 notebook = "^6.4.0"
@@ -21,6 +32,7 @@ black = "^21.6b0"
 flake8 = "^3.9.2"
 isort = "^5.9.1"
 pre-commit = "^2.13.0"
+icecream = "^2.1.1"
 
 [tool.black]
 line-length = 79

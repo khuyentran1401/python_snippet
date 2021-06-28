@@ -70,19 +70,15 @@ def handle_exception(func, *args, **kwargs):
         return val
     except KeyboardInterrupt:
         console.print("Cancelled by user")
+    except ValueError:
+        console.print("No results found")
+        sys.exit(1)
 
 
 @handle_exception
 def get_post_from_questionary(choices: list):
     return questionary.select(
         "Which post do you want to choose?", choices=choices
-    ).ask()
-
-
-@handle_exception
-def get_print_code_from_questionary():
-    return questionary.select(
-        "Would you like to print the code snippet?", choices=["Yes", "No"]
     ).ask()
 
 
@@ -96,16 +92,15 @@ def get_save_code_from_questionary():
 def get_code(code_link: str):
     if code_link == "":
         return
-    print_code_ans = get_print_code_from_questionary()
+ 
+    code = print_code(code_link)
+    save_code = get_save_code_from_questionary()
 
-    if print_code_ans == "Yes":
-        code = print_code(code_link)
-        save_code = get_save_code_from_questionary()
-
-        if save_code == "Yes":
-            file_name = get_file_name(code_link)
-            with open(file_name, "w") as f:
-                f.write(code)
+    if save_code == "Yes":
+        file_name = get_file_name(code_link)
+        with open(file_name, "w") as f:
+            f.write(code)
+        console.print(f"The file {file_name} is saved to your current directory :sparkles:")
 
 
 def get_color(num: int):

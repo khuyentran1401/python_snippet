@@ -3,3 +3,4 @@ __pycache__
 TODO.md
 *.ipynb
 .pytest_cache
+dist

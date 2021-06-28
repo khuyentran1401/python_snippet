@@ -22,5 +22,7 @@ def print_code(url: str):
     raw_url = get_raw_url(url)
     code = requests.get(raw_url).text
 
+    console.print("Here is the code for you to copy: :books: \n")
     console.print(Syntax(code, "python"))
+    console.print('\n')
     return code
