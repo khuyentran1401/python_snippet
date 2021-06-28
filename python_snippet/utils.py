@@ -93,11 +93,15 @@ def get_code(code_link: str):
     if code_link == "":
         return
  
-    code = print_code(code_link)
+    file_name = get_file_name(code_link)
+    if file_name.endswith('.ipynb'):
+        console.print("This is a notebook so the source code will not be printed on the terminal.")
+    else:
+        code = print_code(code_link)
+    
     save_code = get_save_code_from_questionary()
 
     if save_code == "Yes":
-        file_name = get_file_name(code_link)
         with open(file_name, "w") as f:
             f.write(code)
         console.print(f"The file {file_name} is saved to your current directory :sparkles:")
