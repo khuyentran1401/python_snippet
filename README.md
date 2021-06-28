@@ -16,7 +16,7 @@ python3 --version
 
 ## Usage
 ### Search for posts based on category
-![gif](https://github.com/khuyentran1401/python_snippet/blob/master/images/search_category.gif?raw=true)
+![gif](https://github.com/khuyentran1401/python_snippet/blob/master/images/search_category2.gif?raw=true)
 You can search for posts based on category by typing:
 ```bash
 python-snippet search-category
