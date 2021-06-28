@@ -4,9 +4,9 @@ A tool to get Python and data science snippets at [Data Science Simplified](http
 
 ## Installation
 ```bash
-python -m pip install --user python-snippet
+python3 -m pip install --user python-snippet
 ```
-**Note**: _The `--user` is important. It ensures you install it in your directory and not in the global system. `python -m` ensures that you install python_snippet in the default python version._
+**Note**: _The `--user` is important. It ensures you install it in your directory and not in the global system. `python3 -m` ensures that you install python_snippet using Python 3._
 
 Make sure your default Python version is >= 3.6.2.
 ```bash
