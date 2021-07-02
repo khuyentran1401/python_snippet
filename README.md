@@ -1,6 +1,6 @@
 # Python Snippet Tool
 
-A tool to get Python and data science snippets at [Data Science Simplified](https://mathdatasimplified.com/) on the command line. 
+A tool to get Python and data science snippets at [Data Science Simplified](https://mathdatasimplified.com/) on the command line. Read my article about how I created this tool [here](https://towardsdatascience.com/python-and-data-science-snippets-on-the-command-line-2673d5d9e55d)
 
 ## Installation
 ```bash
