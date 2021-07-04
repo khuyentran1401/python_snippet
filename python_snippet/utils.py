@@ -100,6 +100,8 @@ def get_code(code_link: str):
         )
     else:
         code = print_code(code_link, file_name)
+        
+    # if code is not None:
 
     save_code = get_save_code_from_questionary()
 

@@ -28,7 +28,7 @@ def search_posts(pattern=typer.Argument(..., help="String pattern")):
 
     title = get_post_from_questionary(get_choices(relevant_titles))
     post = titles_to_post[title]
-    console.print(f"Here is the link: [bold cyan]{post}[/bold cyan] :boom:")
+    console.print(f"Here is the link to the post: [bold cyan]{post}[/bold cyan] :boom:")
     get_code(titles_to_code[title])
 
 

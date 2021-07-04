@@ -1,6 +1,8 @@
 import requests
 from rich.console import Console
 from rich.syntax import Syntax
+import sys
+
 
 console = Console()
 
@@ -27,9 +29,13 @@ def get_extension(filename: str):
 
 def print_code(url: str, filename: str):
     raw_url = get_raw_url(url)
-    code = requests.get(raw_url).text
-
-    console.print("Here is the code for you to copy: :books: \n")
-    console.print(Syntax(code, get_extension(filename)))
-    console.print("\n")
-    return code
+    r = requests.get(raw_url)
+    if r.status_code == 404:
+        console.print(f"Here is the link to the source code: [bold magenta]{url}[/bold magenta]")
+        sys.exit(1)
+    else:
+        code = r.text
+        console.print("Here is the code for you to copy: :books: \n")
+        console.print(Syntax(code, get_extension(filename)))
+        console.print("\n")
+        return code

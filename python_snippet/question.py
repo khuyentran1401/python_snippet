@@ -55,7 +55,7 @@ def get_post(subcategory: str):
     title = get_post_from_questionary(choices)
 
     post = titles_to_post[title]
-    console.print(f"Here is the link: [bold cyan]{post}[/bold cyan] :boom:")
+    console.print(f"Here is the link to the post: [bold cyan]{post}[/bold cyan] :boom:")
     return titles_to_code[title]
 
 
