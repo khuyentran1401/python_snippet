@@ -1,6 +1,6 @@
 # Python Snippet Tool
 
-A tool to get Python and data science snippets at [Data Science Simplified](https://mathdatasimplified.com/) on the command line. 
+A tool to get Python and data science snippets at [Data Science Simplified](https://mathdatasimplified.com/) on the command line. You can read [my article](https://towardsdatascience.com/python-and-data-science-snippets-on-the-command-line-2673d5d9e55d) to learn how I created this tool.
 
 ## Installation
 ```bash
@@ -24,6 +24,7 @@ python-snippet search-category
 ```
 Once you select a post, you will receive an output like below:
 ![image](https://github.com/khuyentran1401/python_snippet/blob/master/images/search_category2.png?raw=True)
+
 ### Search for posts based on a string pattern
 ![gif](https://github.com/khuyentran1401/python_snippet/blob/master/images/search_posts.gif?raw=true)
 
